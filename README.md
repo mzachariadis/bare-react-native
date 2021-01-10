@@ -10,7 +10,7 @@ To create a bare project execute the commands below on the root directory:
 5. Rename package name folders of debug/ and release/ on `./android/app/src/main/java/`
 6. Update package name inside the related files such as `MainActivity.java`, `MainApplication.java`
 7. `npm install`
-8. `cd ios && open <newName>.xcworkspace` and the Xcode will be opened. Change the bundle identifier
+8. `cd ios && open <newName>.xcworkspace` and the Xcode will open. Change the bundle identifier
 9. `cd ios && pod install`
 
 ## Environmental variables
