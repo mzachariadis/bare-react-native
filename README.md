@@ -1,12 +1,12 @@
 # React Native application
 
 ## Create Bare Project
-When a new bare project is created, these lines of README are not needed. 
-To create a bare project execute the commands below on the root directory: 
+When a new bare project is created, these lines of README are not needed.
+To create a bare project execute the commands below on the root directory:
 1. `npx react-native-rename <newName> -b <bundleIdentifier>`. E.g. for this project is `npx react-native-rename "Bare React Native" -b com.barereactnative`
 2. `watchman watch-del-all`
 3. `npx react-native start --reset-cache`
-4. Open `./android/app/_BUCK` and rename current bundle id 
+4. Open `./android/app/_BUCK` and rename current bundle id
 5. Rename package name folders of debug/ and release/ on `./android/app/src/main/java/`
 6. Update package name inside the related files such as `MainActivity.java`, `MainApplication.java`
 7. `npm install`
@@ -38,3 +38,6 @@ Rename `.env.example` to `.env` to get the local environmental variables you nee
 #### Run on Android using APK
 
 If a physical device is used, the "Allow App Installations from Unknown Sources" option must be enabled from the settings. In addition, remove any previous version of the app.
+
+## Releases
+Releases for this repository are aligned with the [React Native](https://github.com/facebook/react-native) repo.
