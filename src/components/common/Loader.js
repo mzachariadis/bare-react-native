@@ -6,7 +6,7 @@
  */
 
 import React from 'react';
-import {StyleSheet, View, Text} from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
 
 const Loader: () => React$Node = ({
   show = true,
@@ -23,10 +23,10 @@ const Loader: () => React$Node = ({
       style={[
         styles.container,
         fullScreen && styles.fullScreen,
-        background === 'dark' && {backgroundColor: '#013476'},
+        background === 'dark' && styles.dark,
       ]}>
       {/* todo - add the loader of your preference (e.g. https://www.npmjs.com/package/react-native-indicators) */}
-      <Text style={{fontWeight: 'bold', color: 'gray'}}>Loading...</Text>
+      <Text style={styles.text}>Loading...</Text>
     </View>
   );
 };
@@ -46,5 +46,12 @@ const styles = StyleSheet.create({
     height: '100%',
     top: 0,
     left: 0,
+  },
+  dark: {
+    backgroundColor: '#013476',
+  },
+  text: {
+    fontWeight: 'bold',
+    color: 'gray',
   },
 });

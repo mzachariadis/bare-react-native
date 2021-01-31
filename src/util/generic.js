@@ -15,7 +15,7 @@ export function timeoutPromise(ms, promise) {
       (err) => {
         clearTimeout(timeoutId);
         reject(err);
-      }
+      },
     );
   });
 }

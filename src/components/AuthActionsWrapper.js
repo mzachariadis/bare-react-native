@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import { AuthProvider } from '../context/AuthContext';
+import React, {useEffect, useState} from 'react';
+import {Alert} from 'react-native';
+import {AuthProvider} from '../context/AuthContext';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import Loader from './common/Loader';
 import auth from '../api/rest/user';
@@ -7,7 +8,7 @@ import auth from '../api/rest/user';
 /**
  * Set Context <AuthProvider/> value
  */
-function AuthActionsWrapper({ children }) {
+function AuthActionsWrapper({children}) {
   const [state, setState] = useState({
     isAuthenticated: false,
     getAuthenticatedUserCompleted: false,
@@ -44,7 +45,7 @@ function AuthActionsWrapper({ children }) {
           exception.message === 'Network request failed';
 
         if (hasConnectivityProblem) {
-          toast.error('Πρόβλημα συνδεσιμότητας');
+          Alert.alert('Πρόβλημα συνδεσιμότητας');
         }
       }
     })();
@@ -54,10 +55,7 @@ function AuthActionsWrapper({ children }) {
     try {
       const sessionData = userData;
 
-      await AsyncStorage.setItem(
-        '@session-data',
-        JSON.stringify(sessionData),
-      );
+      await AsyncStorage.setItem('@session-data', JSON.stringify(sessionData));
 
       setState({
         isAuthenticated: true,

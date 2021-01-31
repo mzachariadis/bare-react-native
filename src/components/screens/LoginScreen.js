@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, SafeAreaView } from 'react-native';
+import {SafeAreaView, Text, View} from 'react-native';
 
 function LoginScreen() {
   return (
@@ -8,7 +8,7 @@ function LoginScreen() {
         <Text>Login screen</Text>
       </View>
     </SafeAreaView>
-  )
+  );
 }
 
 export default LoginScreen;

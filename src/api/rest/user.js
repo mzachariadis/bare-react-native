@@ -1,5 +1,5 @@
 import {API_URL} from '../../constants/config';
-import {delay, timeoutPromise} from '../../util/generic';
+import {timeoutPromise} from '../../util/generic';
 import axios from 'axios';
 
 export async function getUser(token) {

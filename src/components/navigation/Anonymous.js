@@ -4,7 +4,7 @@
  */
 
 import React from 'react';
-import { createStackNavigator } from '@react-navigation/stack';
+import {createStackNavigator} from '@react-navigation/stack';
 import LoginScreen from '../screens/LoginScreen';
 
 const Stack = createStackNavigator();
@@ -24,9 +24,7 @@ function MainStackScreen() {
 }
 
 function Anonymous() {
-  return (
-    <MainStackScreen />
-  );
+  return <MainStackScreen />;
 }
 
 export default Anonymous;
