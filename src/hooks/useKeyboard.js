@@ -29,7 +29,7 @@ export default () => {
     Keyboard.addListener('keyboardWillHide', onKeyboardWillHide);
     Keyboard.addListener('keyboardDidShow', onKeyboardDidShow);
     Keyboard.addListener('keyboardDidHide', onKeyboardDidHide);
-    return (): void => {
+    return () => {
       Keyboard.removeListener('keyboardWillShow', onKeyboardWillShow);
       Keyboard.removeListener('keyboardWillHide', onKeyboardWillHide);
       Keyboard.removeListener('keyboardDidShow', onKeyboardDidShow);

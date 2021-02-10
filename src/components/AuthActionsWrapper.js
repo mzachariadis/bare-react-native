@@ -39,7 +39,7 @@ function AuthActionsWrapper({children}) {
         });
       } catch (exception) {
         console.log('exception', exception);
-        resetState();
+        await resetState();
         const hasConnectivityProblem =
           exception.message === 'timeout' ||
           exception.message === 'Network request failed';
@@ -65,29 +65,27 @@ function AuthActionsWrapper({children}) {
       });
     } catch (exception) {
       console.log(exception);
-      resetState();
+      await resetState();
     }
   }
 
   async function handleLogout() {
-    resetState();
+    await resetState();
   }
 
-  function resetState(completed = true) {
-    (async function () {
-      try {
-        await AsyncStorage.removeItem('@session-data');
-        setState({
-          isAuthenticated: false,
-          getAuthenticatedUserCompleted: completed,
+  async function resetState(completed = true) {
+    try {
+      await AsyncStorage.removeItem('@session-data');
+      setState({
+        isAuthenticated: false,
+        getAuthenticatedUserCompleted: completed,
 
-          user: {},
-          token: null,
-        });
-      } catch (exception) {
-        console.log(exception);
-      }
-    })();
+        user: {},
+        token: null,
+      });
+    } catch (exception) {
+      console.log(exception);
+    }
   }
 
   // RENDER
